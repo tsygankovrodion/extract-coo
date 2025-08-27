@@ -18,8 +18,10 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install PyInstaller
-        run: pip install pyinstaller
+      - name: Install dependencies
+        run: |
+          pip install pyinstaller
+          pip install PyPDF2
 
       - name: Build EXE
         run: pyinstaller --onefile --noconsole extract_coo.pyw
